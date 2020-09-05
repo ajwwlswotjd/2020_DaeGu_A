@@ -49,6 +49,7 @@ header {
 
 .menu {
     display: flex;
+    z-index: 10;
 }
 
 .menu > .menu_item {
@@ -74,11 +75,8 @@ header {
     background-color: #333030;
 }
 
+.sub_menu:hover,
 .menu > .menu_item > a:hover ~ .sub_menu {
-    display: block;
-}
-
-.sub_menu:hover {
     display: block;
 }
 
@@ -111,10 +109,15 @@ header {
     color: #fff;
 }
 
+/* header end */
+
+/* visual section */
+
 #visual {
     width: 100%;
     height: 600px;
     position: relative;
+    display: flex;
 }
 
 #slider {
@@ -132,7 +135,10 @@ header {
     position: relative;
     display: flex;
     justify-content: space-between;
-    left: 0%;
+    left: -0%;
+    animation-delay: calc(-12s + 0.6s);
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
 }
 
 .slider-pannel > img {
@@ -167,9 +173,355 @@ header {
 .controller-labels > div {
     width: calc(50% - 5px);
     height: 100%;
+    border:1px solid #fff;
     position: relative;
+}
+
+.controller-labels > div > label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    font-size:25px;
+    cursor: pointer;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    margin: 0 !important;
+}
+
+.slide-active {
+    display: none;
+    /* z-index: 2; */
+}
+
+.slide-active-1:checked ~ #slider .slider-pannel {
+	animation-name: slide1;
+}
+.slide-active-2:checked ~ #slider .slider-pannel {
+	animation-name: slide2;
+}
+.slide-active-3:checked ~ #slider .slider-pannel {
+	animation-name: slide3;
+}
+.slide-active-4:checked ~ #slider .slider-pannel {
+	animation-name: slide4;
+}
+
+@keyframes slide1 {
+	000% { left: -000%; }
+	020% { left: -000%; }
+
+	025% { left: -100%; }
+	045% { left: -100%; }
+
+	050% { left: -200%; }
+	070% { left: -200%; }
+
+	075% { left: -100%; }
+	095% { left: -100%; }
+
+	100% { left: -000%; }
+}
+
+/* 1 2 3 2 1 */
+
+@keyframes slide2 {
+	000% { left: -100%; }
+	020% { left: -100%; }
+
+	025% { left: -200%; }
+	045% { left: -200%; }
+
+	050% { left: -100%; }
+	070% { left: -100%; }
+
+	075% { left: -000%; }
+	095% { left: -000%; }
+
+	100% { left: -100%; }
+}
+
+/* 2 3 2 1 2 */
+
+@keyframes slide3 {
+	000% { left: -200%; }
+	020% { left: -200%; }
+
+	025% { left: -100%; }
+	045% { left: -100%; }
+
+	050% { left: -000%; }
+	070% { left: -000%; }
+
+	075% { left: -100%; }
+	095% { left: -100%; }
+
+	100% { left: -200%; }
+}
+
+/* 3 2 1 2 3 */
+
+@keyframes slide4 {
+	000% { left: -100%; }
+	020% { left: -100%; }
+
+	025% { left: -000%; }
+	045% { left: -000%; }
+
+	050% { left: -100%; }
+	070% { left: -100%; }
+
+	075% { left: -200%; }
+	095% { left: -200%; }
+
+	100% { left: -100%; }
+}
+/* 2 1 2 3 2 */
+
+.slide-active-1:checked ~ .visual-controller .controller-labels label[data-idx='1']{
+	animation-name: controller1;
+}
+.slide-active-1:checked ~ .visual-controller .controller-labels label[data-idx='2']{
+	animation-name: controller2;
+}
+.slide-active-1:checked ~ .visual-controller .controller-labels label[data-idx='3']{
+	animation-name: controller3;
+}
+.slide-active-1:checked ~ .visual-controller .controller-labels label[data-idx='4']{
+	animation-name: controller4;
+}
+
+.slide-active-2:checked ~ .visual-controller .controller-labels label[data-idx='1']{
+	animation-name: controller4;
+}
+.slide-active-2:checked ~ .visual-controller .controller-labels label[data-idx='2']{
+	animation-name: controller1;	
+}
+.slide-active-2:checked ~ .visual-controller .controller-labels label[data-idx='3']{
+	animation-name: controller2;	
+}
+.slide-active-2:checked ~ .visual-controller .controller-labels label[data-idx='4']{
+	animation-name: controller3;	
+}
+
+.slide-active-3:checked ~ .visual-controller .controller-labels label[data-idx='1']{
+	animation-name: controller3;
+}
+.slide-active-3:checked ~ .visual-controller .controller-labels label[data-idx='2']{
+	animation-name: controller4;	
+}
+.slide-active-3:checked ~ .visual-controller .controller-labels label[data-idx='3']{
+	animation-name: controller1;	
+}
+.slide-active-3:checked ~ .visual-controller .controller-labels label[data-idx='4']{
+	animation-name: controller2;	
+}
+
+.slide-active-4:checked ~ .visual-controller .controller-labels label[data-idx='1']{
+	animation-name: controller2;
+}
+.slide-active-4:checked ~ .visual-controller .controller-labels label[data-idx='2']{
+	animation-name: controller3;	
+}
+.slide-active-4:checked ~ .visual-controller .controller-labels label[data-idx='3']{
+	animation-name: controller4;	
+}
+.slide-active-4:checked ~ .visual-controller .controller-labels label[data-idx='4']{
+	animation-name: controller1;	
+}
+
+@keyframes controller1 {
+	000.0% { z-index: 2; }
+	024.9% { z-index: 2; }
+
+	025.0% { z-index: 0; }
+	049.9% { z-index: 0; }
+
+	050.0% { z-index: 0; }
+	074.9% { z-index: 0; }
+
+	075.0% { z-index: 0; }
+	099.9% { z-index: 0; }
+
+	100.0% { z-index: 2; }
+}
+
+@keyframes controller2 {
+	000.0% { z-index: 0; }
+	024.9% { z-index: 0; }
+
+	025.0% { z-index: 2; }
+	049.9% { z-index: 2; }
+
+	050.0% { z-index: 0; }
+	074.9% { z-index: 0; }
+
+	075.0% { z-index: 0; }
+	099.9% { z-index: 0; }
+
+	100.0% { z-index: 0; }
+}
+
+@keyframes controller3 {
+	000.0% { z-index: 0; }
+	024.9% { z-index: 0; }
+
+	025.0% { z-index: 0; }
+	049.9% { z-index: 0; }
+
+	050.0% { z-index: 2; }
+	074.9% { z-index: 2; }
+
+	075.0% { z-index: 0; }
+	099.9% { z-index: 0; }
+
+	100.0% { z-index: 0; }
+}
+
+@keyframes controller4 {
+	000.0% { z-index: 0; }
+	024.9% { z-index: 0; }
+
+	025.0% { z-index: 0; }
+	049.9% { z-index: 0; }
+
+	050.0% { z-index: 0; }
+	074.9% { z-index: 0; }
+
+	075.0% { z-index: 2; }
+	099.9% { z-index: 2; }
+
+	100.0% { z-index: 0; }
+}
+
+.visual-imgs {
+    top: 100px;
+    width: 50%;
+    height: 100px;
     display: flex;
+    position: relative;
+    justify-content: space-between;
+}
+
+.visual-imgs > label {
+    width: calc( 100% / 3 );
+    height: 100%;
+    margin: 0 10px;
+    cursor: pointer;
+    box-shadow: 1px 2px 3px 2px #0001;
+}
+
+.visual-imgs > label > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* visual section end */
+
+
+/* rading section */
+
+section#reading {
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+/* rading section end */
+
+/* event section */
+
+section#event {
+    background-color: #333030;
+    color: #f4f5f9;
+    text-align: center;
+}
+
+/* event section end */
+
+/* popup part */
+
+.popup {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* display: flex; */
+    display: none;
     justify-content: center;
     align-items: center;
-    border:1px solid #fff;
+    background-color: #0008;
+    z-index: 11;
+    cursor: pointer;
 }
+
+.writer-popup-img {
+    width: 50vw;
+    height: 50vh;
+    object-fit: cover;
+    z-index: 12;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+
+.popup-check-box {
+    display: none;
+}
+
+#popup1-check:checked ~ #writer-popup-img1,
+#popup1-check:checked ~ .writer-popup-1 {
+    display: flex;
+}
+
+#popup2-check:checked ~ #writer-popup-img2,
+#popup2-check:checked ~ .writer-popup-2 {
+    display: flex;
+}
+
+#popup3-check:checked ~ #writer-popup-img3,
+#popup3-check:checked ~ .writer-popup-3 {
+    display: flex;
+}
+
+#popup4-check:checked ~ #writer-popup-img4,
+#popup4-check:checked ~ .writer-popup-4 {
+    display: flex;
+}
+
+/* popup part end */
+
+/* author section */
+
+section#author {
+    /* height: 600px; */
+    background-color: #e7e7e7;
+    text-align: center;
+}
+
+#author > label > img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* author section end */
+
+/* lecture section */
+
+section#lecture {
+    height: 500px;
+    background-color:#333030;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* lecture section end */

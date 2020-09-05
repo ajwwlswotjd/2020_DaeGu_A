@@ -10,81 +10,175 @@
 </head>
 
 <body>
-    <!-- header -->
-    <header>
 
-        <img src="images/logo.png" alt="logo" id="header_logo">
+    <input type="checkbox" id="popup1-check" class="popup-check-box">
+    <label class="popup writer-popup-1" for="popup1-check"></label>
+    <img src="img/초청작가/1.jpg" alt="초청작가" title="초청작가" class="writer-popup-img" id="writer-popup-img1">
 
-        <div class="menu">
-            <div class="menu_item">
-                <a href="#">전주독서대전</a>
-                <div class="sub_menu">
-                    <div class="sub_menu_item"><a href="#">대전소개</a></div>
-                    <div class="sub_menu_item"><a href="#">회원가입 / 로그인</a></div>
-                    <div class="sub_menu_item"><a href="#">행사개요</a></div>
+    <input type="checkbox" id="popup2-check" class="popup-check-box">
+    <label class="popup writer-popup-2" for="popup2-check"></label>
+    <img src="img/초청작가/2.jpg" alt="초청작가" title="초청작가" class="writer-popup-img" id="writer-popup-img2">
+
+    <input type="checkbox" id="popup3-check" class="popup-check-box">
+    <label class="popup writer-popup-3" for="popup3-check"></label>
+    <img src="img/초청작가/3.jpg" alt="초청작가" title="초청작가" class="writer-popup-img" id="writer-popup-img3">
+
+    <input type="checkbox" id="popup4-check" class="popup-check-box">
+    <label class="popup writer-popup-4" for="popup4-check"></label>
+    <img src="img/초청작가/4.jpg" alt="초청작가" title="초청작가" class="writer-popup-img" id="writer-popup-img4">
+    
+    <div class="container">
+        <!-- header -->
+        <header>
+
+            <img src="images/logo.png" alt="logo" id="header_logo">
+
+            <div class="menu">
+                <div class="menu_item">
+                    <a href="#">전주독서대전</a>
+                    <div class="sub_menu">
+                        <div class="sub_menu_item"><a href="#">대전소개</a></div>
+                        <div class="sub_menu_item"><a href="#">회원가입 / 로그인</a></div>
+                        <div class="sub_menu_item"><a href="#">행사개요</a></div>
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <a href="#">온라인 책만들기</a>
+                    <div class="sub_menu">
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <a href="#">독자와의 만남</a>
+                    <div class="sub_menu">
+                        <div class="sub_menu_item"><a href="#">예약하기</a></div>
+                        <div class="sub_menu_item"><a href="#">예약확인</a></div>
+                    </div>
+                </div>
+                <div class="menu_item">
+                    <a href="#">관리자 페이지</a>
+                    <div class="sub_menu">
+                        <div class="sub_menu_item"><a href="#">행사등록</a></div>
+                        <div class="sub_menu_item"><a href="#">예약관리</a></div>
+                    </div>
                 </div>
             </div>
-            <div class="menu_item">
-                <a href="#">온라인 책만들기</a>
-                <div class="sub_menu">
+
+        </header>
+        <!-- header end -->
+
+        <!-- visual section -->
+
+        <section id="visual">
+
+            <input type="radio" name="slider" class="slide-active slide-active-1" id="slide1" checked>
+            <input type="radio" name="slider" class="slide-active slide-active-2" id="slide2">
+            <input type="radio" name="slider" class="slide-active slide-active-3" id="slide3">
+            <input type="radio" name="slider" class="slide-active slide-active-4" id="slide4">
+
+
+            <div class="visual-controller">
+                <div class="visual-controller-text">
+                    <h1>2020 전주독서대전</h1>
+                    <h4>" 책 읽는 도시 글 쓰는 전주 "</h4>
+                    <h6>2020. 9. 18.(금) ~ 9. 20.(일)</h6>
                 </div>
-            </div>
-            <div class="menu_item">
-                <a href="#">독자와의 만남</a>
-                <div class="sub_menu">
-                    <div class="sub_menu_item"><a href="#">예약하기</a></div>
-                    <div class="sub_menu_item"><a href="#">예약확인</a></div>
-                </div>
-            </div>
-            <div class="menu_item">
-                <a href="#">관리자 페이지</a>
-                <div class="sub_menu">
-                    <div class="sub_menu_item"><a href="#">행사등록</a></div>
-                    <div class="sub_menu_item"><a href="#">예약관리</a></div>
-                </div>
-            </div>
-        </div>
+                <div class="controller-labels">
+                    <div class="controller-left">
+                        <label for="slide2" data-idx="1">&lt;</label>
+                        <label for="slide3" data-idx="2">&lt;</label>
+                        <label for="slide4" data-idx="3">&lt;</label>
+                        <label for="slide1" data-idx="4">&lt;</label>
+                    </div>
 
-    </header>
-    <!-- header end -->
-
-    <!-- visual section -->
-
-    <section id="visual">
-
-
-        
-
-        <div class="visual-controller">
-            <div class="visual-controller-text">
-                <h1>2020 전주독서대전</h1>
-                <h4>" 책 읽는 도시 글 쓰는 전주 "</h4>
-                <h6>2020. 9. 18.(금) ~ 9. 20.(일)</h6>
-            </div>
-            <div class="controller-labels">
-                <div class="controller-left">
-                    
+                    <div class="controller-right">
+                        <label for="slide2" data-idx="1">&gt;</label>
+                        <label for="slide3" data-idx="2">&gt;</label>
+                        <label for="slide4" data-idx="3">&gt;</label>
+                        <label for="slide1" data-idx="4">&gt;</label>
+                    </div>
                 </div>
 
-                <div class="controller-right">
-
+                <div class="visual-imgs">
+                    <label for="slide1"><img src="img/4.jpg" alt=""></label>
+                    <label for="slide2"><img src="img/5.jpg" alt=""></label>
+                    <label for="slide3"><img src="img/6.jpg" alt=""></label>
                 </div>
             </div>
-        </div>
 
-        <div id="slider">
-            <div class="slider-pannel">
-                <img src="img/1.jpg" alt="img" title="img">
-                <img src="img/2.jpg" alt="img" title="img">
-                <img src="img/3.jpg" alt="img" title="img">
+            <div id="slider">
+                <div class="slider-pannel">
+                    <img src="img/1.jpg" alt="img" title="img">
+                    <img src="img/2.jpg" alt="img" title="img">
+                    <img src="img/3.jpg" alt="img" title="img">
+                </div>
             </div>
-        </div>
 
-        
 
-    </section>
+        </section>
 
-    <!-- visual section  -->
+        <!-- visual section end -->
+
+        <!-- reading section -->
+
+        <section id="reading" class="row mt-5">
+            <h1 class="col-12 mt-5">독서대전소개 영역</h1>
+            <p class="col-12 mb-5">
+                독서대전 소개<br>
+                ‘다독 다독, 당신을 듣겠습니다'<br>
+                전주독서대전 올해의 주제는 ‘다독 다독, 당신을 듣겠습니다’입니다. 독서의 끝은 자신의 고유한 세계와 감정을 직접 글로 쓰는 것이고 이것은 또 다른 책 읽기의 기쁨으로 이어집니다. 읽기와 쓰기는 한 몸처럼 연결되어 있습니다. 전주의 여러 도서관에서 상설로 다양한 글쓰기 프로그램(시쓰기, 서평쓰기, 글쓰기 등)을 진행하는 것은 독서의 본질을 꿰뚫는 좋은 기획입니다. 전주독서대전은 독서공동체들이 자발적으로 참여하는 시민 주도형 책 축제라는 특성을 갖고 있습니다. 도서관과 독서 공동체들이 중심이 되어서 독서생태계를 가꾸어 가는 것은 단 며칠의 축제 행사에 그칠 수는 없습니다. 일상을 책과 함께 할 수 있도록 집 앞의 도서관을 더 많이 확충하고 책을 읽는 즐거움을 나누는 다양한 문화마당을 펼쳐나가겠습니다.
+            </p>
+        </section>
+
+        <!-- reading section end -->
+
+        <!-- event section -->
+
+        <section id="event" class="row">
+            <h1 class="col-12 mt-5">행사목록 영역</h1>
+            <p class="col-12 mb-5">
+                2020 전주 독서대전
+                <br><br>
+                개막행사<br>
+                - 책으로 떠나는 백이십 년의 시간여행 조선 말 책을 읽어주던 전기수와 전주 부윤일행, 2020년 전주한벽루에 나타나다. 현대판 전기수인 북튜버와 조선 전기수의 입심 대결. 판소리와 랩, 흥겨운 연주가 함께 합니다.
+                <br><br>
+                책에게 말 걸기<br>
+                - 국 문학을 대표하는 중견 소설가. 전북 고창 출생. 소설집 '타인에게 말 걸기', '행복한 사람은 시계를 보지 않는다' '다른 모든 눈송이와 아주 비슷하게 생긴 단 하나의 눈송이' 장편소설 '새의 선물', '마지막 춤은 나와 함께', '그것은 꿈이었을까' '마이너리그', '비밀과 거짓말', '소년을 위로해줘', '태연한 인생'
+                <br><br>
+                그 책_작가를 만나다<br>
+                - 어떻게 슬픔은 빛이 되는가 '정혜윤의 읽기와 쓰기'<br>
+                - 독서에세이 '침대와 책'을 시작으로 '삶을 바꾸는 책 읽기', '마술라디오' 등 책과 사람에 관한 이야기를 썼다.
+            </p>
+            <img src="img/10.jpg" alt="" class="col-6 mb-2">
+            <img src="img/11.jpg" alt="" class="col-6 mb-2">
+        </section>
+
+        <!-- event section end -->
+
+        <!-- author section -->
+
+        <section id="author" class="row mt-5">
+            <h1 class="col-12 mt-5">초청작가 영역</h1>
+            <p class="col-12 mt-5">
+                초청 작가
+                <br>
+                전주에서는 매일이 책 축제이지만, 생일잔치처럼 작가와 독자가 즐겁게 만나는 특별한 마당도 펼쳐놓았습니다. 책을 사랑하는 이들이 정겹게 만나는 아름다운 독서축제에 살아있는 이야기의 주인공이신 여러분들을 초대합니다.
+            </p>
+
+            <label for="popup1-check" class="mt-2 mb-3 col-3"><img src="/img/초청작가/1.jpg" alt="img" title="img"></label>
+            <label for="popup2-check" class="mt-2 mb-3 col-3"><img src="/img/초청작가/2.jpg" alt="img" title="img"></label>
+            <label for="popup3-check" class="mt-2 mb-3 col-3"><img src="/img/초청작가/3.jpg" alt="img" title="img"></label>
+            <label for="popup4-check" class="mt-2 mb-3 col-3"><img src="/img/초청작가/4.jpg" alt="img" title="img"></label>
+        </section>
+
+        <!-- author section end -->
+
+        <!-- lecture section -->
+        <section id="lecture" class="row">
+            <h1 class="col-12">강연 목록</h1>
+        </section>
+
+        <!-- lecture section end -->
+    </div>
 </body>
 
 </html>
