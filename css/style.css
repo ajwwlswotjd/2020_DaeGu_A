@@ -712,11 +712,11 @@ section#main {
 
 /* 480px mobile */
 
-.mobile-btn { display: none; }
+.mobile-btn { display: none !important; }
 
 @media(max-width:480px) {
     .menu { display: none; }
-    .mobile-btn { display: block; }
+    .mobile-btn { display: block !important; }
     .lecture-circle-out {
         width: 380px;
         height: 380px;
