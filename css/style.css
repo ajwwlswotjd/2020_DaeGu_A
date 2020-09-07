@@ -1,5 +1,5 @@
 @charset "UTF-8";
-
+@import url(../fa/css/all.css);
 /* css init */
 
 * {
@@ -459,7 +459,6 @@ section#event {
 }
 
 .writer-popup-img {
-    width: 50vw;
     height: 50vh;
     object-fit: cover;
     z-index: 12;
@@ -515,19 +514,228 @@ section#author {
 /* lecture section */
 
 section#lecture {
-    height: 500px;
+    height: 600px;
     background-color:#333030;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    text-align: center;
+}
+
+section#lecture > h1 {
+    color: #fff;
 }
 
 
-.lecture-circle {
-    
+.lecture-circle-out {
+    width: 450px;
+    height: 450px;
+    background-color: #fff;
+    border-radius: 100%;
+    position: relative;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    padding: 35px;
 }
 
+.lecture-quator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 12px;
+}
+
+.lecture-quator-title {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.lecture-circle-inner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(2,1fr);
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    /* transform: rotate(0deg); */
+}
+
+.lecture-circle-inner > .lecture-inner-quator:not(:nth-child(1)) { background-color: #007bff; }
+.lecture-circle-inner > .lecture-inner-quator:nth-child(1) { border-top-left-radius: 100%; }
+.lecture-circle-inner > .lecture-inner-quator:nth-child(2) { border-top-right-radius: 100%; }
+.lecture-circle-inner > .lecture-inner-quator:nth-child(3) { border-bottom-left-radius: 100%; }
+.lecture-circle-inner > .lecture-inner-quator:nth-child(4) { border-bottom-right-radius: 100%; }
+
+.lecture-circle-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%,-50%);
+    background-color: #007bff;
+    box-shadow: 1px 2px 3px 2px #0002;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lecture-controller {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.lecture-active-radio {
+    display: none;
+}
+
+.lecture-controller > label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #fff;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.lecture-controller > label > i {
+    animation-name: iconSize;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes iconSize {
+    0%   { transform: scale(1.0); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1.0); }
+}
+
+#lecture-active1:checked ~ .lecture-circle-inner { animation-name: rotate0;   }
+#lecture-active2:checked ~ .lecture-circle-inner { animation-name: rotate90;  }
+#lecture-active3:checked ~ .lecture-circle-inner { animation-name: rotate180; }
+#lecture-active4:checked ~ .lecture-circle-inner { animation-name: rotate270; }
+
+@keyframes rotate0 {
+    from { transform: rotate(270deg); }
+    to   { transform: rotate(360deg); }
+}
+
+@keyframes rotate90 {
+    from { transform: rotate(0deg);  }
+    to   { transform: rotate(90deg); }
+}
+
+@keyframes rotate180 {
+    from { transform: rotate(90deg);  }
+    to   { transform: rotate(180deg); }
+}
+
+@keyframes rotate270 {
+    from { transform: rotate(180deg);  }
+    to   { transform: rotate(270deg);  }
+}
+
+.lecture-circle-btn label[data-idx='1'] { display: none;  }
+.lecture-circle-btn label[data-idx='2'] { display: block; }
+.lecture-circle-btn label[data-idx='3'] { display: none;  }
+.lecture-circle-btn label[data-idx='4'] { display: none;  }
+
+#lecture-active1:checked ~ .lecture-circle-btn label[data-idx='1'] { display: none;  }
+#lecture-active1:checked ~ .lecture-circle-btn label[data-idx='2'] { display: block; }
+#lecture-active1:checked ~ .lecture-circle-btn label[data-idx='3'] { display: none;  }
+#lecture-active1:checked ~ .lecture-circle-btn label[data-idx='4'] { display: none;  }
+
+#lecture-active2:checked ~ .lecture-circle-btn label[data-idx='1'] { display: none;  }
+#lecture-active2:checked ~ .lecture-circle-btn label[data-idx='2'] { display: none;  }
+#lecture-active2:checked ~ .lecture-circle-btn label[data-idx='3'] { display: block; }
+#lecture-active2:checked ~ .lecture-circle-btn label[data-idx='4'] { display: none;  }
+
+#lecture-active3:checked ~ .lecture-circle-btn label[data-idx='1'] { display: none;  }
+#lecture-active3:checked ~ .lecture-circle-btn label[data-idx='2'] { display: none;  }
+#lecture-active3:checked ~ .lecture-circle-btn label[data-idx='3'] { display: none;  }
+#lecture-active3:checked ~ .lecture-circle-btn label[data-idx='4'] { display: block; }
+
+#lecture-active4:checked ~ .lecture-circle-btn label[data-idx='1'] { display: block; }
+#lecture-active4:checked ~ .lecture-circle-btn label[data-idx='2'] { display: none;  }
+#lecture-active4:checked ~ .lecture-circle-btn label[data-idx='3'] { display: none;  }
+#lecture-active4:checked ~ .lecture-circle-btn label[data-idx='4'] { display: none;  }
 
 /* lecture section end */
+
+
+/* footer  */
+
+footer {
+    height: 300px;
+    background-color: #dfdfdf;
+    position: relative;
+}
+
+footer i {
+    font-size: 50px;
+    color: #000;
+    cursor: pointer;
+}
+
+footer i:hover {
+    color: blue;
+}
+
+footer img {
+    width: 200px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* footer end */
+
+/* overview.html */
+
+section#main {
+    position: relative;
+}
+
+/* overview.html end */
+
+/* 480px mobile */
+
+.mobile-btn { display: none; }
+
+@media(max-width:480px) {
+    .menu { display: none; }
+    .mobile-btn { display: block; }
+    .lecture-circle-out {
+        width: 380px;
+        height: 380px;
+        padding: 25px;
+    }
+    .lecture-quator { font-size: 10px; }
+    .lecture-quator-title { font-size: 12px; }
+
+    section#visual { height: 300px; }
+    .visual-imgs {
+        height: 50px;
+        width: 80%;
+        top: 20px;
+    }
+    .visual-controller-text > h1 { font-size: 17px; }
+    .visual-controller-text > h4 { font-size: 15px; }
+    #author > label > img {height: 100px; }
+    .writer-popup-img { width: 70vw; height: auto; }
+    body { overflow-x: hidden; }
+}
+
+/* 480px mobile */
